@@ -8,14 +8,6 @@ const localRestaurants = [
 
     },
     {
-        name: "Guzman Y Gomez (COMING SOON!)",
-        image_url: "https://images.ctfassets.net/kzwrgxz9bwgr/7EEajdeeWvt7lishYoFgGz/1df4c28ffb55461a0f40f34b90f2199d/WSQ-NewWeb-GuzmanyGomez-HeroImgs.jpg"
-    },
-    {
-        name: "Kenko Sushi (We have this one.)",
-        image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRODDQeG2-FyNXITyxUvtcJe5-JdqPhKU84SA&usqp=CAU"
-    },
-    {
         name: "Boost Juice (COMING SOON!)",
         image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpbtZgjhHFMeSiQMyU1VWOQNCaOCO1kXk0YQ&usqp=CAU"
     },
@@ -43,7 +35,16 @@ const localRestaurants = [
 
 export default function RestaurantItem() {
     return (
+        // Subway
         <TouchableOpacity activeOpacity={1} style={{ marginBottom: 5 }}>
+            <View style={{ marginTop: 10, padding: 15, backgroundColor: "white"}}>
+                <RestaurantImage image= "https://images.ctfassets.net/kzwrgxz9bwgr/7EEajdeeWvt7lishYoFgGz/1df4c28ffb55461a0f40f34b90f2199d/WSQ-NewWeb-GuzmanyGomez-HeroImgs.jpg"/>
+                <RestaurantInfo name="Guzman Y Gomez"/>
+            </View>
+            <View style={{ marginTop: 10, padding: 15, backgroundColor: "white"}}>
+                <RestaurantImage image="https://www.health.com/thmb/Ha-EpkCqEP8hjjEdy6Uc8JHy8kQ=/2000x1125/filters:fill(auto,1)/Is-Sushi-Healthy-AdobeStock_255917111-2000-0e643c96f492401681efc23ccaab332d.jpg" />
+                <RestaurantInfo name="Kenko"/>
+            </View>
             {localRestaurants.map((restaurant, index) => (
                 <View 
                     key={index}
