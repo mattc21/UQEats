@@ -1,5 +1,10 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
+import { Button } from "react-native-paper";
+import { StyleSheet } from "react-native";
+import {useNavigation} from '@react-navigation/native';
+
+
 
 const localRestaurants = [
     {
@@ -32,18 +37,22 @@ const localRestaurants = [
         image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbHKQgNV3U75WF-MIqb3V26olQ9WuihYYfhw&usqp=CAU"
     },
 ];
-
 export default function RestaurantItem() {
+
+    const navigation = useNavigation();
+
     return (
-        // Subway
-        <TouchableOpacity activeOpacity={1} style={{ marginBottom: 5 }}>
+        <TouchableOpacity activeOpacity={1} style={{ marginBottom: 5 }} >
             <View style={{ marginTop: 10, padding: 15, backgroundColor: "white"}}>
                 <RestaurantImage image= "https://images.ctfassets.net/kzwrgxz9bwgr/7EEajdeeWvt7lishYoFgGz/1df4c28ffb55461a0f40f34b90f2199d/WSQ-NewWeb-GuzmanyGomez-HeroImgs.jpg"/>
                 <RestaurantInfo name="Guzman Y Gomez"/>
+                <Button style={styles.orderButton} mode="elevated"onPress={() => navigation.navigate("MenuItemsGuzman")}>ORDER GUZMAN Y GOMEZ</Button>
             </View>
+        
             <View style={{ marginTop: 10, padding: 15, backgroundColor: "white"}}>
                 <RestaurantImage image="https://www.health.com/thmb/Ha-EpkCqEP8hjjEdy6Uc8JHy8kQ=/2000x1125/filters:fill(auto,1)/Is-Sushi-Healthy-AdobeStock_255917111-2000-0e643c96f492401681efc23ccaab332d.jpg" />
                 <RestaurantInfo name="Kenko"/>
+                <Button style={styles.orderButton} mode="elevated" onPress={() => navigation.navigate("MenuItems")}>ORDER KENKO</Button>
             </View>
             {localRestaurants.map((restaurant, index) => (
                 <View 
@@ -52,10 +61,10 @@ export default function RestaurantItem() {
                 >
                     <RestaurantImage image={restaurant.image_url} />
                     <RestaurantInfo name={restaurant.name}/>
+                    <Button style={styles.orderButton} mode="elevated">ORDER {restaurant.name.toUpperCase()}</Button>
                 </View>
             ))} 
         </TouchableOpacity>
-        
     );
 }
 
@@ -76,3 +85,9 @@ const RestaurantInfo = (props) => (
         </View>
     </View>
 );
+
+const styles = StyleSheet.create({
+    orderButton: {
+        top: 7
+    }
+})

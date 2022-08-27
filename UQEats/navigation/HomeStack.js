@@ -6,6 +6,8 @@ import LoginScreen from "../screens/LoginScreen";
 import MenuItem from "../components/MenuItem";
 import { Menu } from "react-native-paper";
 import MenuItems from "../screens/MenuItems";
+import RegisterScreen from "../screens/RegisterScreen";
+import MenuItemsGuzman from "../screens/MenuItemsGuzman";
 
 const Stack = createStackNavigator();
 
@@ -14,7 +16,9 @@ export function HomeStack() {
         <Stack.Navigator initialRouteName="LoginScreen">
             <Stack.Screen name="HomeScreen" component={HomeScreen} options={{headerShown: false}}/>
             <Stack.Screen name="LoginScreen" component={LoginScreen} options={{headerShown: false}}/>
-            <Stack.Screen name="kenko" component={MenuItems} options={{headerShown: false}} />
+            <Stack.Screen name="MenuItemsGuzman" component={MenuItemsGuzman} options={{headerShown: false}} />
+            <Stack.Screen name="MenuItems" component={MenuItems} options={{headerShown: false}} />
+            <Stack.Screen name="Registration" component={RegisterScreen} options={{headerShown: false}} />
         </Stack.Navigator>
     )
 }

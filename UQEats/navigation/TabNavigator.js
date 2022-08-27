@@ -1,6 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
-import HomeScreen from "../screens/HomeScreen";
 import ConfirmationScreen from "../screens/ConfirmationScreen";
 import { HomeStack } from "./HomeStack";
 import LoginScreen from "../screens/LoginScreen";
