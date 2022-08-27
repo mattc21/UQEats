@@ -12,7 +12,7 @@ const localRestaurants = [
         image_url: "https://images.ctfassets.net/kzwrgxz9bwgr/7EEajdeeWvt7lishYoFgGz/1df4c28ffb55461a0f40f34b90f2199d/WSQ-NewWeb-GuzmanyGomez-HeroImgs.jpg"
     },
     {
-        name: "Kenko Sushi (COMING SOON!)",
+        name: "Kenko Sushi (We have this one.)",
         image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRODDQeG2-FyNXITyxUvtcJe5-JdqPhKU84SA&usqp=CAU"
     },
     {

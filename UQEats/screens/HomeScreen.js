@@ -17,7 +17,6 @@ const HomeScreen = () => {
                     <RestaurantItem />
                 </ScrollView>
             </View>
-            
         </NavigationContainer>
         
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image, ScrollView, SafeAreaView} from 'react-native'; 
-import { Button, Card, TextInput } from "react-native-paper";
+import { Button, Card, TextInput, Divider } from "react-native-paper";
 
 const LoginScreen = () => {
     return (
