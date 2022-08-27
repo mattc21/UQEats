@@ -1,34 +1,23 @@
-import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { PanResponder, StyleSheet, Text, View } from 'react-native';
-import {Provider as PaperProvider, TextInput, Button} from 'react-native-paper'
-import Tabs from './navigation/tabs';
-import AreaNavigator from './screens/AreaNavigator';
-import HomeScreen from './screens/HomeScreen';
-import LoginScreen from './screens/LoginScreen';
-import RegisterScreen from './screens/RegisterScreen';
+import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import MainContainer from './navigation/MainContainer';
+import MenuItems from './navigation/screens/MenuItems';
 
 export default function App() {
   return (
-    // <PaperProvider>
-    //   <LoginScreen />
-    // </PaperProvider>
-    
-    // <NavigationContainer>
-    //   <Tabs />
-    // </NavigationContainer>
-
-    // <AreaNavigator />
-
-    <HomeScreen />
+    <View style={styles.container}>
+      <MainContainer/>
+    </View>
   );
 }
-
+ 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
+

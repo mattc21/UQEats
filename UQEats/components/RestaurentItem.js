@@ -1,5 +1,8 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
+import { Button } from "react-native-paper";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const localRestaurants = [
     {
@@ -7,14 +10,7 @@ const localRestaurants = [
         image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGfFs58mdz54mFvF4RjejBIdqPR0tJhJaABw&usqp=CAU",
 
     },
-    {
-        name: "Guzman Y Gomez (COMING SOON!)",
-        image_url: "https://images.ctfassets.net/kzwrgxz9bwgr/7EEajdeeWvt7lishYoFgGz/1df4c28ffb55461a0f40f34b90f2199d/WSQ-NewWeb-GuzmanyGomez-HeroImgs.jpg"
-    },
-    {
-        name: "Kenko Sushi (We have this one.)",
-        image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRODDQeG2-FyNXITyxUvtcJe5-JdqPhKU84SA&usqp=CAU"
-    },
+    
     {
         name: "Boost Juice (COMING SOON!)",
         image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpbtZgjhHFMeSiQMyU1VWOQNCaOCO1kXk0YQ&usqp=CAU"
@@ -41,9 +37,25 @@ const localRestaurants = [
     },
 ];
 
-export default function RestaurantItem() {
+export default function RestaurantItem({navigation}) {
     return (
+
         <TouchableOpacity activeOpacity={1} style={{ marginBottom: 5 }}>
+            <View 
+                style={{ marginTop: 10, padding: 15, backgroundColor: "white"}}
+                >
+                    <Text onPress={()=> navigation.navigate('Sushi')}></Text>
+                    <RestaurantImage image={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRODDQeG2-FyNXITyxUvtcJe5-JdqPhKU84SA&usqp=CAU"}/>
+                    <RestaurantInfo name={"Kenko Sushi"}/>
+                    <Button mode="contained" onPress={()=>navigation.navigate('Menu')}>Go to</Button>
+            </View>
+
+            <View 
+                style={{ marginTop: 10, padding: 15, backgroundColor: "white"}}
+                >
+                    <RestaurantImage image={"https://images.ctfassets.net/kzwrgxz9bwgr/7EEajdeeWvt7lishYoFgGz/1df4c28ffb55461a0f40f34b90f2199d/WSQ-NewWeb-GuzmanyGomez-HeroImgs.jpg"}/>
+                    <RestaurantInfo name={"Guzman Y Gomez"}/>
+            </View>
             {localRestaurants.map((restaurant, index) => (
                 <View 
                     key={index}

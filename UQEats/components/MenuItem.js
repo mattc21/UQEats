@@ -73,7 +73,7 @@ export default function MenuItem() {
                     <FoodImage food={food}/>
                     
                 </View>
-                <Button color={"#B19CD9"} title = {"Add " + food.title}/>
+                <Button color={'#B19CD9'} title = {"Add " + food.title}/>
                 <Divider />
             </View>
         ))}
