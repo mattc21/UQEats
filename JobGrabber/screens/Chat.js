@@ -52,7 +52,7 @@ export default function Chat({ route, navigation }) {
     } else {
       chatRoom = chatID;
     }
-    const collectionRef = collection(database, chatRoom);
+    const collectionRef = collection(database, "chats");
     const q = query(collectionRef, orderBy("createdAt", "desc"));
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
