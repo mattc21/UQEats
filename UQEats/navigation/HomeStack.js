@@ -16,11 +16,10 @@ export function HomeStack() {
     return (
         <Stack.Navigator initialRouteName="LoginScreen">
             <Stack.Screen name="HomeScreen" component={HomeScreen} options={{headerShown: false}}/>
-            <Stack.Screen options={{tabBar, headerShown: false}} name="LoginScreen" component={LoginScreen} />
+            <Stack.Screen name="LoginScreen" component={LoginScreen} options={{headerShown: false}}/>
             <Stack.Screen name="MenuItemsGuzman" component={MenuItemsGuzman} options={{headerShown: false}} />
             <Stack.Screen name="MenuItems" component={MenuItems} options={{headerShown: false}} />
             <Stack.Screen name="Registration" component={RegisterScreen} options={{headerShown: false}} />
-            
         </Stack.Navigator>
     )
 }

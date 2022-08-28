@@ -2,7 +2,7 @@ import React from 'react';
 import {View, StyleSheet, Text, Image, ScrollView, SafeAreaView} from 'react-native'; 
 import { Button, Card, TextInput, Divider } from "react-native-paper";
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
     return (
         <SafeAreaView style={styles.content}>
             <View style={styles.view}>
@@ -17,8 +17,8 @@ const LoginScreen = () => {
                         <TextInput label="Email" keyboardType='email-address'></TextInput>
                         <TextInput label="Password" secureTextEntry = {true}></TextInput>
                         <Button style={{padding: 5}} >FORGOT EMAIL/PASSWORD</Button>
-                        <Button style={styles.button} mode="contained">LOGIN</Button>
-                        <Button style={styles.button} mode="contained">REGISTER</Button>
+                        <Button style={styles.button} onPress={() => navigation.navigate("Home")}mode="contained">LOGIN</Button>
+                        <Button style={styles.button} mode="contained" onPress={() => navigation.navigate("Registration")}>REGISTER </Button>
                     </Card.Content>
                 </Card>
             </View>

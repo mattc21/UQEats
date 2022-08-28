@@ -2,11 +2,12 @@ import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { SafeAreaView, ScrollView, View, Image, StyleSheet } from "react-native";
 import RestaurantItem from "../components/RestaurentItem";
+import { TabNavigator } from "../navigation/TabNavigator";
 
 const HomeScreen = () => {
     return (
-        <NavigationContainer>
             <View style = {homeScreenStyles.background} cont>
+                
                 <ScrollView style = {homeScreenStyles.background}showsVerticalScrollIndicator={false} contentContainerStyle={{ flexGrow: 1, paddingVertical: 50 }}>
                     <Image
                         source={
@@ -17,16 +18,14 @@ const HomeScreen = () => {
                     <RestaurantItem />
                 </ScrollView>
             </View>
-        </NavigationContainer>
-        
-
+            
     )
 }
 
 const homeScreenStyles = StyleSheet.create({
     logo: {
         width: "90%",
-        height: "5%",
+        height: "12%",
         margin: 10,
         left: 8,
     },

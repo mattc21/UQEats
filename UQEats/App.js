@@ -11,13 +11,24 @@ import MenuItemsGuzman from "./screens/MenuItemsGuzman";
 import ConfirmationScreen from "./screens/ConfirmationScreen";
 import { TabNavigator } from './navigation/TabNavigator';
 import { HomeStack } from './navigation/HomeStack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Stack = createStackNavigator();
 
+function AuthStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name = "LoginScreen" component = {LoginScreen}/>
+    </Stack.Navigator>
+  )
+}
+
 export default function App() {
+  let loggedIn = 0;
   return (
     <NavigationContainer>
-      <TabNavigator/>
+      {loggedIn ? <TabNavigator /> : <AuthStack/>}
     </NavigationContainer>
+
   );
 }
