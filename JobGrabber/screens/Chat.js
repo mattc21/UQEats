@@ -4,7 +4,7 @@ import React, {
   useLayoutEffect,
   useCallback,
 } from "react";
-import { TouchableOpacity, Text } from "react-native";
+import { TouchableOpacity, Text, View } from "react-native";
 import { GiftedChat } from "react-native-gifted-chat";
 import {
   collection,
@@ -17,8 +17,9 @@ import { signOut } from "firebase/auth";
 
 import { auth, database } from "../config/firebase";
 
-export default function Chat({ navigation }) {
+export default function Chat({ route, navigation }) {
   const [messages, setMessages] = useState([]);
+  const { order, chatID } = route.params;
 
   const onSignOut = () => {
     signOut(auth).catch((error) => console.log("Error logging out: ", error));
@@ -45,7 +46,13 @@ export default function Chat({ navigation }) {
   // }, []);
 
   useEffect(() => {
-    const collectionRef = collection(database, "chats");
+    let chatRoom;
+    if (typeof chatID === "undefined") {
+      chatRoom = "chats";
+    } else {
+      chatRoom = chatID;
+    }
+    const collectionRef = collection(database, chatRoom);
     const q = query(collectionRef, orderBy("createdAt", "desc"));
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {

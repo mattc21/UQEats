@@ -18,8 +18,11 @@ import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 export default function Jobs({ navigation }) {
   const [users, setUsers] = useState([]);
   const todoRef = collection(database, "jobs");
-  const changeScreens = () => {
-    navigation.navigate("Chat");
+  const changeScreens = (item, id) => {
+    navigation.navigate("Chat", {
+      order: item,
+      chatID: id,
+    });
   };
   useEffect(async () => {
     // const querySnapshot = await getDocs(collection(database, "jobs"));
@@ -34,7 +37,9 @@ export default function Jobs({ navigation }) {
         console.log(`${doc.id} => ${doc.data().text} ${doc.data().heading}`)
       );
       querySnapshot.forEach((doc) =>
-        doc.data().num == 2 ? changeScreens() : null
+        doc.data().num == 2
+          ? changeScreens(doc.data().text, doc.data().heading)
+          : null
       );
       // id = doc.data().text;
       setTimeout(() => Query(), 3000);
@@ -61,7 +66,7 @@ export default function Jobs({ navigation }) {
     // });
   }, []);
   return (
-    <View>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Text>Waiting.. {users}</Text>
     </View>
     //   <FlatList>
