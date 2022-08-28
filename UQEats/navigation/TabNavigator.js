@@ -4,6 +4,7 @@ import ConfirmationScreen from "../screens/ConfirmationScreen";
 import { HomeStack } from "./HomeStack";
 import LoginScreen from "../screens/LoginScreen";
 import HomeScreen from "../screens/HomeScreen";
+import Cart from "../screens/Cart";
 
 const Tab = createBottomTabNavigator();
 
@@ -18,7 +19,7 @@ export function TabNavigator() {
       />
       <Tab.Screen
         name="Cart"
-        component={LoginScreen}
+        component={Cart}
         options={{ headerShown: false }}
       />
       <Tab.Screen

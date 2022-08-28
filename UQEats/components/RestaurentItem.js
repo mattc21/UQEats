@@ -3,9 +3,6 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import { Button } from "react-native-paper";
 import { StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import MenuItems from "../screens/MenuItems";
-import RegisterScreen from "../screens/RegisterScreen";
-import MenuItemsGuzman from "../screens/MenuItemsGuzman";
 
 const localRestaurants = [
   {

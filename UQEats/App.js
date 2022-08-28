@@ -28,13 +28,15 @@ import React, { useState, createContext, useContext, useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import Login from "./screens/Login";
 import { auth } from "./config/firebase";
+import Signup from "./screens/Signup";
 
 const Stack = createStackNavigator();
 
 function AuthStack() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="LoginScreen" component={Login} />
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Signup" component={Signup} />
     </Stack.Navigator>
   );
 }
